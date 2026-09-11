@@ -60,6 +60,7 @@ rectangle "BegBand" {
     package "Adminisztráció (Admin)" {
         usecase "Userek kezelése" as UC_UserekKezeles <<admin>>
         usecase "Userek törlése" as UC_UserekTorles <<admin>>
+        usecase "Mindent tud amit a tobbi rang rendelkezik" as UC_AdminMinden <<admin>>
     }
 }
 
@@ -75,10 +76,11 @@ Leader -[#D97706]-> UC_BandaMegtekintese
 Leader -[#D97706]-> UC_TagokMegtekintese
 Leader -[#D97706]-> UC_KoncertMegtekintese
 
-Admin -[#DC2626]-> UC_BandaKezeles
-Admin -[#DC2626]-> UC_TagokKezeles
+
+
 Admin -[#DC2626]-> UC_UserekKezeles
 Admin -[#DC2626]-> UC_UserekTorles
+Admin -[#DC2626]-> UC_AdminMinden
 
 UC_ZeneKereses <-[#2563EB]- User
 UC_BandakKereses <-[#2563EB]- User
